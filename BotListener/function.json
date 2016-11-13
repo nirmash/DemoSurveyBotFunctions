@@ -1,0 +1,35 @@
+{
+  "bindings": [
+    {
+      "name": "myQueueItem",
+      "type": "queueTrigger",
+      "direction": "in",
+      "queueName": "bot-message-queue",
+      "connection": "nirsclassicfuncsotrage_STORAGE"
+    },
+    {
+      "type": "documentDB",
+      "name": "outputDocument",
+      "databaseName": "SessionRatings",
+      "collectionName": "Ratings",
+      "createIfNotExists": true,
+      "connection": "nirsimages_DOCUMENTDB",
+      "direction": "out"
+    },
+    {
+      "type": "blob",
+      "name": "inputBlob",
+      "path": "bot-survey-meta/questions.json",
+      "connection": "nirsclassicfuncsotrage_STORAGE",
+      "direction": "in"
+    },
+    {
+      "type": "queue",
+      "name": "outputQueueItem",
+      "queueName": "bot-data-items",
+      "connection": "nirsclassicfuncsotrage_STORAGE",
+      "direction": "out"
+    }
+  ],
+  "disabled": false
+}
