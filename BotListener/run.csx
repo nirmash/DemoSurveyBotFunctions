@@ -7,7 +7,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 
-public static void Run(string myQueueItem, TextReader inputBlob, out object outputDocument,  out string outputQueueItem, TraceWriter log)
+public static void Run(string myQueueItem, out object outputDocument,  out string outputQueueItem, TraceWriter log)
 {
     string qMeta = JToken.Parse(GetSurveyMetaJSON()).ToString(); 
     myQueueItem = CalculateRating(myQueueItem,qMeta);
@@ -15,23 +15,6 @@ public static void Run(string myQueueItem, TextReader inputBlob, out object outp
     JObject o = JObject.Parse(myQueueItem);
     outputDocument = o;
     outputQueueItem = myQueueItem;
-
-    /*
-    var httpWebRequest = (HttpWebRequest)WebRequest.Create(ConfigurationManager.AppSettings["PBIEndpoint"]);
-    httpWebRequest.ContentType = "application/json";
-    httpWebRequest.Method = "POST"; 
-
-    using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
-    {
-        streamWriter.Write("[" + myQueueItem + "]");
-    }
-    var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
-    using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
-    {
-        var result = streamReader.ReadToEnd();
-        log.Info(result);
-    }
-    */
 }
 private static string CalculateRating(string sAnswers, string sQuestions)
 {
