@@ -15,7 +15,7 @@
       "type": "blob",
       "name": "inputBlob",
       "path": "bot-survey-meta/questions.json",
-      "connection": "nirsclassicfuncsotrage_STORAGE",
+      "connection": "azurefunctions72b13a4d_STORAGE",
       "direction": "in"
     }
   ],

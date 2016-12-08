@@ -5,7 +5,7 @@
       "type": "queueTrigger",
       "direction": "in",
       "queueName": "bot-message-queue",
-      "connection": "nirsclassicfuncsotrage_STORAGE"
+      "connection": "azurefunctions72b13a4d_STORAGE"
     },
     {
       "type": "documentDB",
@@ -20,7 +20,7 @@
       "type": "queue",
       "name": "outputQueueItem",
       "queueName": "bot-data-items",
-      "connection": "nirsclassicfuncsotrage_STORAGE",
+      "connection": "azurefunctions72b13a4d_STORAGE",
       "direction": "out"
     }
   ],
