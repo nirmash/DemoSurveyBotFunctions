@@ -18,6 +18,7 @@ public static void Run(string myQueueItem, out object outputDocument,  out strin
     JObject o = JObject.Parse(myQueueItem);
     outputDocument = o;
     */
+    outputDocument="kuku";
     outputQueueItem = myQueueItem;
 }
 private static string CalculateRating(string sAnswers, string sQuestions)
