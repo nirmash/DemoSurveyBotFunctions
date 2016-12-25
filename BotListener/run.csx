@@ -9,11 +9,15 @@ using System.Collections.Generic;
 
 public static void Run(string myQueueItem, out object outputDocument,  out string outputQueueItem, TraceWriter log)
 {
+    log.Info(myQueueItem);
     string qMeta = JToken.Parse(GetSurveyMetaJSON()).ToString(); 
+    log.Info(qMeta);
+    /*
     myQueueItem = CalculateRating(myQueueItem,qMeta);
     log.Info(myQueueItem); 
     JObject o = JObject.Parse(myQueueItem);
     outputDocument = o;
+    */
     outputQueueItem = myQueueItem;
 }
 private static string CalculateRating(string sAnswers, string sQuestions)
